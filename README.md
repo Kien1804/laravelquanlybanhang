@@ -1,3 +1,24 @@
+**Báo cáo:**
+
+2/1/2025 : 
++ cập nhật admin_login page
++ Chức năng đăng nhập - đăng xuất
++ Liên kết với database để sử dụng request admin_name admin_email admin_password cho việc xác thực đăng nhập
++ Yêu cầu nhập lại nếu thông tin nhập vào khác với DB
++ Chuyển đến trang admin_dashboard nếu thông tin chính xác
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
