@@ -8,6 +8,12 @@
 + Yêu cầu nhập lại nếu thông tin nhập vào khác với DB
 + Chuyển đến trang admin_dashboard nếu thông tin chính xác
 
+9/1/2025:
++Update giao diện, thêm js và css cho dự án. 
++Thêm chức năng add/del sản phẩm cho vị trí admin
++Tạo trang chủ của cửa hàng
+
+
 
 
 
