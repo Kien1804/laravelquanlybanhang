@@ -9,14 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('tbl_resetpass', function (Blueprint $table) {
             $table->string('email');
             $table->string('token');
-            $table->timestamps('created_at');
+            $table->timestamps(); // Tự động tạo cột created_at và updated_at với kiểu timestamp
         });
     }
+
 
     /**
      * Reverse the migrations.

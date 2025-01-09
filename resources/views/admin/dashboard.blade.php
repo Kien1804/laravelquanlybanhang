@@ -1,5 +1,4 @@
-@extends('admin_dashboard')
+@extends('admin_layout')
 @section('admin_content')
-    <h3>Welcome, Admin!</h3>
-    <p>This is the admin dashboard where you can manage your application.</p>
+<h3>Chao mung Admin</h3>
 @endsection

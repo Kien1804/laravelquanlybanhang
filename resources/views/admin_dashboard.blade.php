@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <style>
+        /* CSS giữ nguyên như bạn đã viết */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -35,9 +36,18 @@
             text-decoration: none;
             padding: 10px 20px;
             margin: 10px 0;
+            cursor: pointer;
         }
         .sidebar a:hover {
             background-color: #575757;
+        }
+        .submenu {
+            display: none;
+            padding-left: 20px;
+        }
+        .submenu a {
+            margin: 5px 0;
+            background-color: #444;
         }
         .main-content {
             margin-left: 220px;
@@ -50,9 +60,6 @@
             padding: 20px;
             margin: 20px 0;
         }
-        .card h3 {
-            margin-top: 0;
-        }
         .footer {
             text-align: center;
             margin-top: 20px;
@@ -61,17 +68,16 @@
             color: white;
         }
         .user-info {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .user-info .avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 2px solid white;
-    }
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .user-info .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
     </style>
 </head>
 <body>
@@ -82,49 +88,53 @@
             <img src="#" alt="Avatar" class="avatar">
             <span>
                 <?php
-            $name = Session::get('admin_name');
-            if($name){
-                echo $name;
-            }
-            ?>
+                    $name = Session::get('admin_name');
+                    if ($name) {
+                        echo $name;
+                    }
+                ?>
             </span>
         </div>
     </div>
 
     <div class="sidebar">
-        <a href="#dashboard">Dashboard</a>
-        <a href="#users">Manage Users</a>
-        <a href="#settings">Settings</a>
-        <a href="#reports">Reports</a>
+        <a href="#">Tổng quan</a>
+        <a id="productCategoryBtn">Danh mục sản phẩm</a>
+        <div id="productCategorySubmenu" class="submenu">
+            <a href="{{ URL::to('/add_category_product') }}">
+                Thêm danh mục sản phẩm</a>
+            <a href="{{ URL::to('/all_category_product') }}">
+                Liệt kê danh mục sản phẩm</a>
+        </div>
         <a href="{{ URL::to('/admin_login') }}">Logout</a>
     </div>
 
     <div class="main-content">
-        {{-- @yield('admin_content') --}}
-
+        <section class="wrapper">
+            @yield('admin_content')
+        </section>
+        {{-- Nội dung admin_content --}}
         <div class="card">
             <h3>Welcome, Admin!</h3>
             <p>This is the admin dashboard where you can manage your application.</p>
-        </div>
-
-        <div class="card">
-            <h3>Quick Stats</h3>
-            <p>Users: 120 | Active Sessions: 34 | Pending Reports: 5</p>
-        </div>
-
-        <div class="card">
-            <h3>Recent Activity</h3>
-            <ul>
-                <li>User JohnDoe logged in at 9:00 AM</li>
-                <li>New report submitted by User JaneSmith</li>
-                <li>System update completed at 11:00 AM</li>
-            </ul>
         </div>
     </div>
 
     <div class="footer">
         <p>&copy; 2025 Admin Dashboard. All Rights Reserved.</p>
     </div>
+
+    <script>
+        // JavaScript để xử lý sự kiện nhấp chuột
+        document.getElementById("productCategoryBtn").addEventListener("click", function () {
+            const submenu = document.getElementById("productCategorySubmenu");
+            if (submenu.style.display === "block") {
+                submenu.style.display = "none"; // Ẩn submenu nếu nó đang hiển thị
+            } else {
+                submenu.style.display = "block"; // Hiển thị submenu nếu nó đang bị ẩn
+            }
+        });
+    </script>
 
 </body>
 </html>
