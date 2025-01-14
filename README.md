@@ -1,5 +1,14 @@
 **Báo cáo:**
 
+14/1/2025:
++fix bug thành công
++hoàn thành danh mục sản phẩm và các chức năng cơ bản của nó
+
+9/1/2025:
++Update giao diện, thêm js và css cho dự án. 
++Thêm chức năng add/del sản phẩm cho vị trí admin
++Tạo trang chủ của cửa hàng
+
 2/1/2025 : 
 + Đã có phần authentication, authorization, session trong Application.
 + cập nhật admin_login page
@@ -8,10 +17,7 @@
 + Yêu cầu nhập lại nếu thông tin nhập vào khác với DB
 + Chuyển đến trang admin_dashboard nếu thông tin chính xác
 
-9/1/2025:
-+Update giao diện, thêm js và css cho dự án. 
-+Thêm chức năng add/del sản phẩm cho vị trí admin
-+Tạo trang chủ của cửa hàng
+
 
 
 
