@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryProduct;
+use App\Http\Controllers\BrandProduct;
+use App\Http\Controllers\ProductController;
 
 //frontend
 Route::get('/',[HomeController::class,'home']);
@@ -29,3 +31,27 @@ Route::get('/active-category-product{category_product_id}',[CategoryProduct::cla
 
 Route::post('/save-category-product',[CategoryProduct::class,'save_category_product']);
 Route::post('/update-category-product/{category_product_id}',[CategoryProduct::class,'update_category_product']);
+
+//BrandProduct
+Route::get('/add-brand-product',[BrandProduct::class,'add_brand_product']);
+Route::get('/edit-brand-product/{brand_product_id}',[BrandProduct::class,'edit_brand_product']);
+Route::get('/delete-brand-product/{brand_product_id}',[BrandProduct::class,'delete_brand_product']);
+Route::get('/all-brand-product',[BrandProduct::class,'all_brand_product']);
+
+Route::get('/unactive-brand-product{brand_product_id}',[BrandProduct::class,'unactive_brand_product']);
+Route::get('/active-brand-product{brand_product_id}',[BrandProduct::class,'active_brand_product']);
+
+Route::post('/save-brand-product',[BrandProduct::class,'save_brand_product']);
+Route::post('/update-brand-product/{brand_product_id}',[BrandProduct::class,'update_brand_product']);
+
+//Product
+Route::get('/add-product',[ProductController::class,'add_product']);
+Route::get('/edit-product/{product_id}',[ProductController::class,'edit_product']);
+Route::get('/delete-product/{product_id}',[ProductController::class,'delete_product']);
+Route::get('/all-product',[ProductController::class,'all_product']);
+
+Route::get('/unactive-product{product_id}',[ProductController::class,'unactive_product']);
+Route::get('/active-product{product_id}',[ProductController::class,'active_product']);
+
+Route::post('/save-product',[ProductController::class,'save_product']);
+Route::post('/update-product/{product_id}',[ProductController::class,'update_product']);
