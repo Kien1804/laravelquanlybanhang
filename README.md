@@ -1,5 +1,9 @@
 **Báo cáo:**
 
+27/2/2025:
++Cho dữ liệu hiển thị lên trang index
++Hiển thị hình ảnh của sản phẩm lên trang admin lẫn index
+
 14/1/2025:
 +fix bug thành công
 +hoàn thành danh mục sản phẩm và các chức năng cơ bản của nó
